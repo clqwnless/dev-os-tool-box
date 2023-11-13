@@ -20,7 +20,7 @@ set root_folder="%root_folder:~0,-1%"
 
 :ran_as_admin_check
 
-net session > nul 2>&1
+fltmc > nul 2>&1
 
 if %errorlevel% neq 0 (
     echo.
