@@ -41,6 +41,8 @@ for /f "delims=" %%i in (temp_two.txt) do (
 set product_name=%product_name:~0,-1%
 set version=%version:~0,-1%
 
+del /s /q temp.txt > nul 2>&1
+del /s /q temp_two.txt > nul 2>&1
 
 
 :main
