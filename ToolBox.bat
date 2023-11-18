@@ -943,8 +943,10 @@ shutdown /r /t 003
 
 timeout /t 003 /nobreak > nul 2>&1
 
-:safe_mode_configuration
+exit /b 0
 
+
+:safe_mode_configuration
 
 cls
 
@@ -988,6 +990,8 @@ if %choice% equ "1" (
     goto safe_mode_configuration
 )
 
+exit /b 0
+
 
 :bios
 
@@ -1000,3 +1004,5 @@ echo  [*INFO] Rebooting to Bios . . .
 shutdown /r /fw /t 003
 
 timeout /t 003 /nobreak > nul 2>&1
+
+exit /b 0
