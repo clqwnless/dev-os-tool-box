@@ -981,11 +981,15 @@ if %choice% equ "1" (
 
     bcdedit /set {current} safeboot minimal > nul 2>&1
 
+    pause
+
     shutdown /r /t 003
 ) else if %choice% equ "2" (
     echo  [*INFO] Exiting Safe Mode . . .
 
     bcdedit /deletevalue {current} safeboot > nul 2>&1
+
+    pause
 
     shutdown /r /t 003
 ) else if %choice% equ "3" (
