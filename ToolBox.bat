@@ -700,16 +700,16 @@ if not defined choice (
 echo.
 
 if %choice% equ "1" (
-    reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog" /v "Start" /t REG_DWORD /d 2 /f > nul 2>&1
-    
+    sc config EventLog start=auto > nul 2>&1
+
     echo  [*INFO] Enabled Event Viewer
     
     echo.
     
     pause
 ) else if %choice% equ "2" (
-    reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog" /v "Start" /t REG_DWORD /d 4 /f > nul 2>&1
-    
+    sc config EventLog start=disabled > nul 2>&1
+
     echo  [*INFO] Disabled Event Viewer
     
     echo.
