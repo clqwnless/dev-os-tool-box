@@ -334,11 +334,13 @@ if %choice% equ "1" (
     "C:\Windows\System32\compact.exe" /c "C:/Users/*.*" /s /i /a /exe:lzx
 
     echo.
+    echo.
 
     pause
 ) else if %choice% equ "2" (
     "C:\Windows\System32\compact.exe" /c "C:/*.*" /s /i /a /exe:lzx
 
+    echo.
     echo.
 
     pause
