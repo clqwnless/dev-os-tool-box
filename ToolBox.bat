@@ -947,8 +947,6 @@ shutdown /r /t 003
 
 timeout /t 003 /nobreak > nul 2>&1
 
-exit /b 0
-
 
 :safe_mode_configuration
 
@@ -981,24 +979,22 @@ if %choice% equ "1" (
 
     bcdedit /set {current} safeboot minimal > nul 2>&1
 
-    pause
-
     shutdown /r /t 003
+
+    timeout /t 003 /nobreak > nul 2>&1
 ) else if %choice% equ "2" (
     echo  [*INFO] Exiting Safe Mode . . .
 
     bcdedit /deletevalue {current} safeboot > nul 2>&1
 
-    pause
-
     shutdown /r /t 003
+
+    timeout /t 003 /nobreak > nul 2>&1
 ) else if %choice% equ "3" (
     exit /b 0
 ) else (
     goto safe_mode_configuration
 )
-
-exit /b 0
 
 
 :bios
@@ -1012,5 +1008,3 @@ echo  [*INFO] Rebooting to Bios . . .
 shutdown /r /fw /t 003
 
 timeout /t 003 /nobreak > nul 2>&1
-
-exit /b 0
