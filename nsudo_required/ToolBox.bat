@@ -327,16 +327,20 @@ if not defined choice (
 )
 
 if %choice% equ "1" (
-    "C:\Windows\System32\compact.exe" /c "C:/Program Files (x86)/*.*" /s /i /a /exe:lzx"
-    "C:\Windows\System32\compact.exe" /c "C:/Program Files/*.* /s /i /a /exe:lzx"
-    "C:\Windows\System32\compact.exe" /c "C:/ProgramData/*.* /s /i /a /exe:lzx"
-    "C:\Windows\System32\compact.exe" /c "C:/Windows/*.* /s /i /a /exe:lzx"
-    "C:\Windows\System32\compact.exe" /c "C:/Users/*.* /s /i /a /exe:lzx"
-    
+    "C:\Windows\System32\compact.exe" /c "C:/Program Files (x86)/*.*" /s /i /a /exe:lzx
+    "C:\Windows\System32\compact.exe" /c "C:/Program Files/*.*" /s /i /a /exe:lzx
+    "C:\Windows\System32\compact.exe" /c "C:/ProgramData/*.*" /s /i /a /exe:lzx
+    "C:\Windows\System32\compact.exe" /c "C:/Windows/*.*" /s /i /a /exe:lzx
+    "C:\Windows\System32\compact.exe" /c "C:/Users/*.*" /s /i /a /exe:lzx
+
+    echo.
+
     pause
 ) else if %choice% equ "2" (
-    "C:\Windows\System32\compact.exe" /c C:/*.* /s /i /a /exe:lzx
-    
+    "C:\Windows\System32\compact.exe" /c "C:/*.*" /s /i /a /exe:lzx
+
+    echo.
+
     pause
 ) else if %choice% equ "3" (
     exit /b 0
